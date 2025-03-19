@@ -61,10 +61,10 @@ function change(canvasId, txt, size) {
     while (i < stringy.length) {
       var t = ltr.indexOf(stringy[i]);
       if (t >= 0) { // Fix: Ensure character exists in the `ltr` string
-        ctx2.drawImage(txtspr, ((t % 16) * 8), Math.floor(t / 16) * 8, 8, 8, 8 * x, 8 * y, 8, 8);
+        ctx2.drawImage(txtspr, ((t % 16) * size), Math.floor(t / 16) * size, size, size, size * x, size * y, size, size);
       }
       x += 1;
-      if (x * 8 > c2.width - 8) {
+      if (x * size > c2.width - size) {
         x = 0;
         y += 1;
       }

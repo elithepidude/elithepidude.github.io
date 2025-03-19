@@ -17,11 +17,20 @@
 <input id="sigma2" type="text" name="fname">
 <button onclick="myFunctionTwo();">Click here</button></br>
 <canvas id="c1" width="96" height="48">nuh uh</canvas>
-<canvas id="c2" width="192" height="48">nuh uh</canvas></br>
-<canvas id="c3" width="128" height="64">nuh uh</canvas>
-<canvas id="c4" width="256" height="64">nuh uh</canvas></br>
-<canvas id="c5" width="256" height="128">nuh uh</canvas>
-<canvas id="c6" width="512" height="128">nuh uh</canvas>
+<canvas id="c2" width="192" height="48">nuh uh</canvas>
+<canvas id="c3" width="384" height="48">nuh uh</canvas></br>
+<canvas id="c1a" width="96" height="96">nuh uh</canvas>
+<canvas id="c2a" width="192" height="96">nuh uh</canvas>
+<canvas id="c3a" width="384" height="96">nuh uh</canvas></br>
+<canvas id="c1b" width="96" height="144">nuh uh</canvas>
+<canvas id="c2b" width="192" height="144">nuh uh</canvas>
+<canvas id="c3b" width="384" height="144">nuh uh</canvas></br>
+<canvas id="c4" width="128" height="64">nuh uh</canvas>
+<canvas id="c5" width="256" height="64">nuh uh</canvas>
+<canvas id="c6" width="512" height="64">nuh uh</canvas></br>
+<canvas id="c7" width="256" height="128">nuh uh</canvas>
+<canvas id="c8" width="512" height="128">nuh uh</canvas></br>
+<canvas id="c9" width="1024" height="128">nuh uh</canvas>
 
 <script>
 var co = ["#f00", "#0f0", "#00f", "#0ff", "#f0f", "#ff0"];
@@ -64,7 +73,7 @@ function change(canvasId, txt, size) {
         ctx2.drawImage(txtspr, ((t % 16) * size), Math.floor(t / 16) * size, size, size, size * x, size * y, size, size);
       }
       x += 1;
-      if (x * size > c2.width - size) {
+      if (x * size > c2.width - size || (x * size > c2.width - (size*3) && stringy[i] == " ")) {
         x = 0;
         y += 1;
       }
@@ -76,10 +85,19 @@ function change(canvasId, txt, size) {
 function myFunctionTwo() {
   change("c1", document.getElementById("sigma2").value, 6);
   change("c2", document.getElementById("sigma2").value, 6);
-  change("c3", document.getElementById("sigma2").value, 8);
+  change("c3", document.getElementById("sigma2").value, 6);
+  change("c1a", document.getElementById("sigma2").value, 6);
+  change("c2a", document.getElementById("sigma2").value, 6);
+  change("c3a", document.getElementById("sigma2").value, 6);
+  change("c1b", document.getElementById("sigma2").value, 6);
+  change("c2b", document.getElementById("sigma2").value, 6);
+  change("c3b", document.getElementById("sigma2").value, 6);
   change("c4", document.getElementById("sigma2").value, 8);
-  change("c5", document.getElementById("sigma2").value, 16);
-  change("c6", document.getElementById("sigma2").value, 16);
+  change("c5", document.getElementById("sigma2").value, 8);
+  change("c6", document.getElementById("sigma2").value, 8);
+  change("c7", document.getElementById("sigma2").value, 16);
+  change("c8", document.getElementById("sigma2").value, 16);
+  change("c9", document.getElementById("sigma2").value, 16);
 }
 </script>
 

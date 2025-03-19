@@ -109,7 +109,7 @@ while (i < stringy.length) {
   console.log(stringy[i]);
   ctx2.drawImage(txtspr2, (((t)%16))*16, (Math.floor((t)/16))*16, 16, 16, 0+(16*x), 0+(16*y), 16, 16);
   x += 1;
-  if (x*8 > c2.width-8) {
+  if (x*16 > c2.width-16) {
     x = 0;
     y += 1;
   }
@@ -131,7 +131,7 @@ while (i < stringy.length) {
   console.log(stringy[i]);
   ctx2.drawImage(txtspr2, (((t)%16))*16, (Math.floor((t)/16))*16, 16, 16, 0+(16*x), 0+(16*y), 16, 16);
   x += 1;
-  if (x*8 > c2.width-8) {
+  if (x*16 > c2.width-16) {
     x = 0;
     y += 1;
   }

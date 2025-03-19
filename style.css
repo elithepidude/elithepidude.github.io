@@ -1,0 +1,77 @@
+body {
+  background-color: #204;
+}
+
+@font-face {
+  font-family: 'FFX';
+  src: url('FairfaxHD.ttf') format('truetype'); /* Specify the .ttf file */
+}
+
+h1 {
+  color: #ff0;
+  font-family: 'FFX', Courier New, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  color: #cc0;
+  font-family: 'FFX', Courier New, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: 'FFX', Courier New, sans-serif;
+  color: #fff;
+  font-size: 20px;
+}
+
+a:link {
+  font-family: 'FFX', Courier New, sans-serif;
+  color: #00f;
+  font-size: 20px;
+  text-decoration: none;
+}
+a:visited {
+  font-family: 'FFX', Courier New, sans-serif;
+  color: #f0f;
+  font-size: 20px;
+  text-decoration: none;
+}
+a:hover {
+  font-family: 'FFX', Courier New, sans-serif;
+  color: #0ff;
+  font-size: 20px;
+  text-decoration: none;
+}
+a:active {
+  font-family: 'FFX', Courier New, sans-serif;
+  color: #ff0;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+button {
+  background-color: #80f;
+  font-family: 'FFX', Courier New, sans-serif;
+  transition: background-color 0.125s cubic-bezier(0.65, 0, 0.35, 1)
+}
+button:hover {
+  background-color: #84f;
+}
+button:active {
+  background-color: #ff0;
+}
+
+input {
+  background-color: #84f;
+  font-family: 'FFX', Courier New, sans-serif;
+  transition: background-color 0.125s cubic-bezier(0.65, 0, 0.35, 1)
+}
+input:hover {
+  background-color: #88f;
+}
+
+canvas {
+  background-color: #408;
+  border:1px solid #80f;
+}

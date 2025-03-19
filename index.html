@@ -22,6 +22,9 @@ Your browser does not support the HTML canvas tag.</canvas>
 var co = ["#f00", "#0f0", "#00f", "#0ff", "#f0f", "#ff0"];
 var iv = ["#0ff", "#f0f", "#ff0", "#f00", "#0f0", "#00f"];
 
+var img = new Image();
+img.src = "txt/A.png";
+
 function randomInt(int) {
 return Math.floor(Math.random() * 5);
 }
@@ -47,8 +50,7 @@ ctx2.fillRect(0, 0, c2.width, c2.height);
 ctx2.fillStyle = "#000";
 var i = 0
 while (i <= stringy.length) {
-var img = new Image();
-img.src = "txt/A.png";
+
 ctx2.drawImage(img, 16, 16, 8, 8);
 i += 1
 }

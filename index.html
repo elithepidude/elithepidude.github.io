@@ -46,10 +46,10 @@ ctx2.fillStyle = "#000";
 ctx2.fillRect(0, 0, c2.width, c2.height);
 ctx2.fillStyle = "#000";
 var i = 0
-while (i < stringy.length) {
+while (i <= stringy.length) {
 var img = new Image();
 img.src = "txt/A.png";
-context.drawImage(img, 0, 0, canvas.width, canvas.height);
+ctx2.drawImage(img, 16, 16, 8, 8);
 i += 1
 }
 };

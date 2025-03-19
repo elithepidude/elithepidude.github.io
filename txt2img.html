@@ -20,7 +20,7 @@
 <h2>CP437</h2>
 <input id="sigma2" type="text" name="fname">
 <button onclick="myFunctionTwo();">Update Canvas</button></br>
-<select id="dropdown" name="options">
+<select id="dropdown" name="options" onchange="yeah()">
   <option value=6>6x6</option>
   <option value=8>8x8</option>
   <option value=16>16x16</option>
@@ -40,13 +40,13 @@ function randomInt(max) {
 
 function updateValue(a) {
   document.getElementById("t1").textContent = a;
-  document.getElementById("c0").height = document.getElementById("dropdown").value * a * 8;
+  document.getElementById("c0").width = document.getElementById("dropdown").value * a * 4;
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 
 function updateValue2(a) {
   document.getElementById("t2").textContent = a;
-  document.getElementById("c0").width = document.getElementById("dropdown").value * a * 8;
+  document.getElementById("c0").height = document.getElementById("dropdown").value * a * 4;
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 
@@ -59,6 +59,12 @@ function myFunction() {
   ctx.fillStyle = iv[j];
   ctx.font = "32px Comic Sans MS";
   ctx.fillText(document.getElementById("sigma").value, 8, 32);
+}
+
+function yeah() {
+  updateValue(document.getElementById("slider1").value)
+  updateValue2(document.getElementById("slider2").value)
+  change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 
 function change(canvasId, txt, size) {
@@ -92,6 +98,8 @@ function change(canvasId, txt, size) {
 }
 
 function myFunctionTwo(a,b) {
+  updateValue(document.getElementById("slider1").value)
+  updateValue2(document.getElementById("slider2").value)
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 </script>

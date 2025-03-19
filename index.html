@@ -6,7 +6,16 @@
 <button onclick="myFunction();">
 Click here
 </button></br>
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+<canvas id="myCanvas" width="320" height="64" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<hr>
+
+<input id="sigma2" type="text" id="fname" name="fname">
+<button onclick="myFunction2();">
+Click here
+</button></br>
+<canvas id="canvas2" width="320" height="64" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML canvas tag.</canvas>
 
 <script>
@@ -26,6 +35,23 @@ ctx.fillRect(0, 0, c.width, c.height);
 ctx.fillStyle = iv[j];
 ctx.font = "32px Comic Sans MS";
 ctx.fillText(document.getElementById("sigma").value,8,32);
+};
+
+function myFunction2() {
+var c2 = document.getElementById("canvas2");
+var ctx2 = c2.getContext("2d");
+var j2 = randomInt(6)
+var stringy = document.getElementById("sigma2");
+ctx2.fillStyle = "#000";
+ctx2.fillRect(0, 0, c2.width, c2.height);
+ctx2.fillStyle = "#000";
+var i = 0
+while (i < stringy.length) {
+var img = new Image();
+img.src = "txt/A.png";
+context.drawImage(img, 0, 0, canvas.width, canvas.height);
+i += 1
+}
 };
 </script>
 

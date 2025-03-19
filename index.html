@@ -10,20 +10,20 @@ Click here
 Your browser does not support the HTML canvas tag.</canvas>
 
 <script>
-const co = ["#f00", "#0f0", "#00f"];
-const iv = ["#0ff", "#f0f", "#ff0"];
+var co = ["#f00", "#0f0", "#00f", "#0ff", "#f0f", "#ff0"];
+var iv = ["#0ff", "#f0f", "#ff0", "#f00", "#0f0", "#00f"];
 
 function randomInt(int) {
-return Math.floor(Math.random() * 5) + 1;
+return Math.floor(Math.random() * 5);
 }
 
 function myFunction() {
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-var j = randomInt(3)-1
-ctx.fillStyle = co[r];
+var j = randomInt(6)
+ctx.fillStyle = co[j];
 ctx.fillRect(0, 0, c.width, c.height);
-ctx.fillStyle = iv[r];
+ctx.fillStyle = iv[j];
 ctx.font = "32px Comic Sans MS";
 ctx.fillText(document.getElementById("sigma").value,8,32);
 };

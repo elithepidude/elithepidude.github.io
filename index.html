@@ -12,7 +12,7 @@ Your browser does not support the HTML canvas tag.</canvas>
 <hr>
 
 <input id="sigma2" type="text" id="fname" name="fname">
-<button onclick="myFunction2();">
+<button onclick="myFunctionTwo();">
 Click here
 </button></br>
 <canvas id="canvas2" width="320" height="64" style="border:1px solid #d3d3d3;">
@@ -23,7 +23,7 @@ var co = ["#f00", "#0f0", "#00f", "#0ff", "#f0f", "#ff0"];
 var iv = ["#0ff", "#f0f", "#ff0", "#f00", "#0f0", "#00f"];
 
 var img = new Image();
-img.src = "cp437_8x8.png";
+img.src = "https://elithepidude.github.io/cp437_8x8.png";
 
 function randomInt(int) {
 return Math.floor(Math.random() * 5);
@@ -40,7 +40,7 @@ ctx.font = "32px Comic Sans MS";
 ctx.fillText(document.getElementById("sigma").value,8,32);
 }
 
-function myFunction2() {
+function myFunctionTwo() {
 var c2 = document.getElementById("canvas2");
 var ctx2 = c2.getContext("2d");
 var j2 = randomInt(6)

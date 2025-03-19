@@ -49,11 +49,12 @@ ctx2.fillStyle = "#000";
 ctx2.fillRect(0, 0, c2.width, c2.height);
 ctx2.fillStyle = "#000";
 var i = 0
-while (i <= stringy.value.length) {
 
-ctx2.drawImage(img, 16, 16, 8, 8);
-i += 1
+while (i <= stringy.value.length) {
+  ctx2.drawImage(img, 8, 0, 8, 8, 16+(8*i), 16, 8, 8);
+  i += 1
 }
+
 }
 </script>
 

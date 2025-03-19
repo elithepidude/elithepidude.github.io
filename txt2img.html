@@ -6,142 +6,80 @@
 </head>
 <body>
 
-<input id="sigma" type="text" id="fname" name="fname">
-<button onclick="myFunction();">
-Click here
-</button></br>
+<!-- First Input and Button -->
+<input id="sigma" type="text" name="fname">
+<button onclick="myFunction();">Click here</button></br>
 <canvas id="myCanvas" width="320" height="64">nuh uh</canvas>
 
 <hr>
 
-<input id="sigma2" type="text" id="fname" name="fname">
-<button onclick="myFunctionTwo();">
-Click here
-</button></br>
-<canvas id="canvas2" width="128" height="64">nuh uh</canvas>
-<canvas id="canvas3" width="256" height="64">nuh uh</canvas></br>
-<canvas id="canvas4" width="256" height="128">nuh uh</canvas>
-<canvas id="canvas5" width="512" height="128">nuh uh</canvas>
+<!-- Second Input and Buttons -->
+<input id="sigma2" type="text" name="fname">
+<button onclick="myFunctionTwo();">Click here</button></br>
+<canvas id="c1" width="96" height="48">nuh uh</canvas>
+<canvas id="c2" width="192" height="48">nuh uh</canvas></br>
+<canvas id="c3" width="128" height="64">nuh uh</canvas>
+<canvas id="c4" width="256" height="64">nuh uh</canvas></br>
+<canvas id="c5" width="256" height="128">nuh uh</canvas>
+<canvas id="c6" width="512" height="128">nuh uh</canvas>
 
 <script>
 var co = ["#f00", "#0f0", "#00f", "#0ff", "#f0f", "#ff0"];
 var iv = ["#0ff", "#f0f", "#ff0", "#f00", "#0f0", "#00f"];
+var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ ";
 
-var thing = {"a":[0,1]}
-
-var txtspr = new Image();
-txtspr.src = "https://elithepidude.github.io/cp437_8x8.png";
-
-var txtspr2 = new Image();
-txtspr2.src = "https://elithepidude.github.io/cp437_16x16.png";
-
-var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-
-function randomInt(int) {
-return Math.floor(Math.random() * 5);
+function randomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 function myFunction() {
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-var j = randomInt(6)
-ctx.fillStyle = co[j];
-ctx.fillRect(0, 0, c.width, c.height);
-ctx.fillStyle = iv[j];
-ctx.font = "32px Comic Sans MS";
-ctx.fillText(document.getElementById("sigma").value,8,32);
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var j = randomInt(6); // Fix: Ensure randomInt uses the correct maximum
+  ctx.fillStyle = co[j];
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.fillStyle = iv[j];
+  ctx.font = "32px Comic Sans MS";
+  ctx.fillText(document.getElementById("sigma").value, 8, 32);
+}
+
+function change(canvasId, txt, size) {
+  var c2 = document.getElementById(canvasId);
+  var ctx2 = c2.getContext("2d");
+  var stringy = txt;
+  var txtspr = new Image();
+  txtspr.src = "https://elithepidude.github.io/cp437_" + size + "x" + size + ".png";
+
+  txtspr.onload = function () { // Fix: Ensure image is loaded before drawing
+    ctx2.fillStyle = "#888";
+    ctx2.clearRect(0, 0, c2.width, c2.height);
+    ctx2.fillStyle = "#000";
+
+    var i = 0;
+    var x = 0;
+    var y = 0;
+    while (i < stringy.length) {
+      var t = ltr.indexOf(stringy[i]);
+      if (t >= 0) { // Fix: Ensure character exists in the `ltr` string
+        ctx2.drawImage(txtspr, ((t % 16) * 8), Math.floor(t / 16) * 8, 8, 8, 8 * x, 8 * y, 8, 8);
+      }
+      x += 1;
+      if (x * 8 > c2.width - 8) {
+        x = 0;
+        y += 1;
+      }
+      i += 1;
+    }
+  };
 }
 
 function myFunctionTwo() {
-var c2 = document.getElementById("canvas2");
-var ctx2 = c2.getContext("2d");
-var j2 = randomInt(6)
-var stringy = document.getElementById("sigma2").value;
-ctx2.fillStyle = "#888";
-ctx2.clearRect(0, 0, c2.width, c2.height);
-ctx2.fillStyle = "#000";
-
-var i = 0;
-var x = 0;
-var y = 0;
-while (i < stringy.length) {
-  var t = ltr.indexOf(stringy[i]);
-  console.log(stringy[i]);
-  ctx2.drawImage(txtspr, (((t)%16))*8, (Math.floor((t)/16))*8, 8, 8, 0+(8*x), 0+(8*y), 8, 8);
-  x += 1;
-  if (x*8 > c2.width-8) {
-    x = 0;
-    y += 1;
-  }
-  i += 1;
-}
-
-var c2 = document.getElementById("canvas3");
-var ctx2 = c2.getContext("2d");
-var j2 = randomInt(6)
-var stringy = document.getElementById("sigma2").value;
-ctx2.fillStyle = "#888";
-ctx2.clearRect(0, 0, c2.width, c2.height);
-ctx2.fillStyle = "#000";
-var i = 0;
-var x = 0;
-var y = 0;
-while (i < stringy.length) {
-  var t = ltr.indexOf(stringy[i]);
-  console.log(stringy[i]);
-  ctx2.drawImage(txtspr, (((t)%16))*8, (Math.floor((t)/16))*8, 8, 8, 0+(8*x), 0+(8*y), 8, 8);
-  x += 1;
-  if (x*8 > c2.width-8) {
-    x = 0;
-    y += 1;
-  }
-  i += 1;
-}
-
-var c2 = document.getElementById("canvas4");
-var ctx2 = c2.getContext("2d");
-var j2 = randomInt(6)
-var stringy = document.getElementById("sigma2").value;
-ctx2.fillStyle = "#888";
-ctx2.clearRect(0, 0, c2.width, c2.height);
-ctx2.fillStyle = "#000";
-var i = 0;
-var x = 0;
-var y = 0;
-while (i < stringy.length) {
-  var t = ltr.indexOf(stringy[i]);
-  console.log(stringy[i]);
-  ctx2.drawImage(txtspr2, (((t)%16))*16, (Math.floor((t)/16))*16, 16, 16, 0+(16*x), 0+(16*y), 16, 16);
-  x += 1;
-  if (x*16 > c2.width-16) {
-    x = 0;
-    y += 1;
-  }
-  i += 1;
-}
-
-var c2 = document.getElementById("canvas5");
-var ctx2 = c2.getContext("2d");
-var j2 = randomInt(6)
-var stringy = document.getElementById("sigma2").value;
-ctx2.fillStyle = "#888";
-ctx2.clearRect(0, 0, c2.width, c2.height);
-ctx2.fillStyle = "#000";
-var i = 0;
-var x = 0;
-var y = 0;
-while (i < stringy.length) {
-  var t = ltr.indexOf(stringy[i]);
-  console.log(stringy[i]);
-  ctx2.drawImage(txtspr2, (((t)%16))*16, (Math.floor((t)/16))*16, 16, 16, 0+(16*x), 0+(16*y), 16, 16);
-  x += 1;
-  if (x*16 > c2.width-16) {
-    x = 0;
-    y += 1;
-  }
-  i += 1;
-}
-
+  change("c1", document.getElementById("sigma2").value, 6);
+  change("c2", document.getElementById("sigma2").value, 6);
+  change("c3", document.getElementById("sigma2").value, 8);
+  change("c4", document.getElementById("sigma2").value, 8);
+  change("c5", document.getElementById("sigma2").value, 16);
+  change("c6", document.getElementById("sigma2").value, 16);
 }
 </script>
 

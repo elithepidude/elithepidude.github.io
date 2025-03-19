@@ -88,7 +88,7 @@ function change(canvasId, txt, size) {
         ctx2.drawImage(txtspr, ((t % 16) * size), Math.floor(t / 16) * size, size, size, size * x, size * y, size, size);
       }
       x += 1;
-      if (x * size > c2.width - size || (x * size > c2.width - (size*3) && stringy[i] == " ")) {
+      if (x * size > c2.width - size || (x * size > c2.width - (size*1) && stringy[i] == " ")) {
         x = 0;
         y += 1;
       }

@@ -10,16 +10,24 @@ body {
 h1 {
   color: #ff0;
   font-family: 'FFX', Courier New, sans-serif;
-  text-align: center;
+  text-align: left;
+  text-shadow: 0 0 10px #ff0;
 }
 
 h2 {
   color: #cc0;
   font-family: 'FFX', Courier New, sans-serif;
-  text-align: center;
+  text-align: left;
+  text-shadow: 0 0 10px #ff0;
 }
 
 p {
+  font-family: 'FFX', Courier New, sans-serif;
+  color: #fff;
+  font-size: 20px;
+}
+
+txt {
   font-family: 'FFX', Courier New, sans-serif;
   color: #fff;
   font-size: 20px;

@@ -18,15 +18,22 @@
 
 <!-- Second Input and Buttons -->
 <h2>CP437</h2>
-<input id="sigma2" type="text" name="fname">
+<input id="sigma2" type="text" oninput="yeah()" name="fname">
 <button onclick="myFunctionTwo();">Update Canvas</button></br>
 <select id="dropdown" name="options" onchange="yeah()">
   <option value=6>6x6</option>
   <option value=8>8x8</option>
+  <option value=10>10x10</option>
+  <option value=12>12x12</option>
+  <option value=14>14x14</option>
   <option value=16>16x16</option>
+  <option value=18>18x18</option>
+  <option value=20>20x20</option>
+  <option value=32>32x32</option>
+  <option value=64>64x64</option>
 </select></br>
-<input type="range" id="slider1" name="slider" min="1" max="8" value="1" oninput="updateValue(this.value)"><txt id="t1">1</txt></br>
-<input type="range" id="slider2" name="slider" min="1" max="8" value="1" oninput="updateValue2(this.value)"><txt id="t2">1</txt></br>
+<input type="range" id="slider1" name="slider" min="1" max="64" value="1" style="width: 400px;" oninput="updateValue(this.value)"><txt id="t1">1</txt></br>
+<input type="range" id="slider2" name="slider" min="1" max="64" value="1" style="width: 400px;" oninput="updateValue2(this.value)"><txt id="t2">1</txt></br>
 <canvas id="c0" width="48" height="48">nuh uh</canvas>
 
 <script>
@@ -40,13 +47,13 @@ function randomInt(max) {
 
 function updateValue(a) {
   document.getElementById("t1").textContent = a;
-  document.getElementById("c0").width = document.getElementById("dropdown").value * a * 4;
+  document.getElementById("c0").width = document.getElementById("dropdown").value * a;
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 
 function updateValue2(a) {
   document.getElementById("t2").textContent = a;
-  document.getElementById("c0").height = document.getElementById("dropdown").value * a * 4;
+  document.getElementById("c0").height = document.getElementById("dropdown").value * a;
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 
@@ -72,7 +79,7 @@ function change(canvasId, txt, size) {
   var ctx2 = c2.getContext("2d");
   var stringy = txt;
   var txtspr = new Image();
-  txtspr.src = "https://elithepidude.github.io/cp437_" + size + "x" + size + ".png";
+  txtspr.src = "cp437_" + size + "x" + size + ".png";
 
   txtspr.onload = function () { // Fix: Ensure image is loaded before drawing
     ctx2.fillStyle = "#888";

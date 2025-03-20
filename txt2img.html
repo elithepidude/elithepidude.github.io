@@ -34,7 +34,8 @@
 </select></br>
 <input type="range" id="slider1" name="slider" min="1" max="64" value="1" style="width: 400px;" oninput="updateValue(this.value)"><txt id="t1">1</txt></br>
 <input type="range" id="slider2" name="slider" min="1" max="64" value="1" style="width: 400px;" oninput="updateValue2(this.value)"><txt id="t2">1</txt></br>
-<canvas id="c0" width="48" height="48">nuh uh</canvas>
+<canvas id="c0" width="48" height="48">nuh uh</canvas></br>
+<button onclick="doer()">Download Canvas</button>
 
 <script>
 var co = ["#f00", "#0f0", "#00f", "#0ff", "#f0f", "#ff0"];
@@ -43,6 +44,10 @@ var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨�
 
 function randomInt(max) {
   return Math.floor(Math.random() * max);
+}
+
+function doer() {
+  exportCanvasAsPNG("c0","txt2img")
 }
 
 function updateValue(a) {
@@ -60,7 +65,7 @@ function updateValue2(a) {
 function myFunction() {
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
-  var j = randomInt(6); // Fix: Ensure randomInt uses the correct maximum
+  var j = randomInt(6);
   ctx.fillStyle = co[j];
   ctx.fillRect(0, 0, c.width, c.height);
   ctx.fillStyle = iv[j];
@@ -69,9 +74,27 @@ function myFunction() {
 }
 
 function yeah() {
-  updateValue(document.getElementById("slider1").value)
-  updateValue2(document.getElementById("slider2").value)
+  updateValue(document.getElementById("slider1").value);
+  updateValue2(document.getElementById("slider2").value);
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
+}
+
+function exportCanvasAsPNG(id, fileName) {
+
+    var canvasElement = document.getElementById(id);
+
+    var MIME_TYPE = "image/png";
+
+    var imgURL = canvasElement.toDataURL(MIME_TYPE);
+
+    var dlLink = document.createElement('a');
+    dlLink.download = fileName;
+    dlLink.href = imgURL;
+    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+    document.body.appendChild(dlLink);
+    dlLink.click();
+    document.body.removeChild(dlLink);
 }
 
 function change(canvasId, txt, size) {
@@ -81,21 +104,17 @@ function change(canvasId, txt, size) {
   var txtspr = new Image();
   txtspr.src = "cp437_" + size + "x" + size + ".png";
 
-  txtspr.onload = function () { // Fix: Ensure image is loaded before drawing
-    ctx2.fillStyle = "#888";
+  txtspr.onload = function () {
+    console.log("it did something");
     ctx2.clearRect(0, 0, c2.width, c2.height);
-    ctx2.fillStyle = "#000";
-
-    var i = 0;
-    var x = 0;
-    var y = 0;
+    var i = 0, x = 0, y = 0;
     while (i < stringy.length) {
       var t = ltr.indexOf(stringy[i]);
-      if (t >= 0) { // Fix: Ensure character exists in the `ltr` string
-        ctx2.drawImage(txtspr, ((t % 16) * size), Math.floor(t / 16) * size, size, size, size * x, size * y, size, size);
+      if (t >= 0) {
+        ctx2.drawImage(txtspr, (t % 16) * size, Math.floor(t / 16) * size, size, size, x * size, y * size, size, size);
       }
       x += 1;
-      if (x * size > c2.width - size || (x * size > c2.width - (size*1) && stringy[i] == " ")) {
+      if (x * size > c2.width - size || (x * size > c2.width - size && stringy[i] == " ")) {
         x = 0;
         y += 1;
       }
@@ -104,9 +123,9 @@ function change(canvasId, txt, size) {
   };
 }
 
-function myFunctionTwo(a,b) {
-  updateValue(document.getElementById("slider1").value)
-  updateValue2(document.getElementById("slider2").value)
+function myFunctionTwo() {
+  updateValue(document.getElementById("slider1").value);
+  updateValue2(document.getElementById("slider2").value);
   change("c0", document.getElementById("sigma2").value, document.getElementById("dropdown").value);
 }
 </script>

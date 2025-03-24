@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>elithepidude</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+
+<h1>where</h1>
+<h2>explore the sigma world</h2>
+<img src="navigating.gif" width="300" height="265">
+<hr>
+<a href="https://elithepidude.github.io/">index (aka home)</a></br>
+<a href="https://elithepidude.github.io/txt2img.html">txt2img (write text)</a></br>
+<a id="bbRt" href="https://elithepidude.github.io/bobert.html">bobeRt4.5</a><txt style="color: #f00;"> doesn't exist rn, just know i'm working on it though.</txt></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<a href="https://elithepidude.github.io/">???</a></br>
+<hr>
+<p id="a">h</p>
+<a href="https://elithepidude.github.io/">go back</a>
+
+<script>
+var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+
+function randomInt(int) {
+  return Math.round(Math.random() * int);
+}
+
+function shuffleAndConcatenate(array) {
+  // Shuffle the array
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+
+  // Concatenate the elements into a single string
+  return array.join("");
+}
+
+setInterval(() => {
+  document.getElementById("bbRt").textContent = shuffleAndConcatenate(["b","o","b","e","R","t","4",".","5"]);
+  // Add your code here to perform a task
+}, 100); // 500 milliseconds = 0.5 seconds
+
+
+document.getElementById("a").textContent = "btw you rolled a "+randomInt(21);
+</script>
+
+</body>
+</html>

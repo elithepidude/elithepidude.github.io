@@ -1,5 +1,6 @@
 body {
   background-color: #204;
+  padding: 64px;
 }
 
 @font-face {
@@ -7,18 +8,37 @@ body {
   src: url('FairfaxHD.ttf') format('truetype'); /* Specify the .ttf file */
 }
 
+@font-face {
+  font-family: 'GARN';
+  src: url('400xoj.ttf') format('truetype'); /* Specify the .ttf file */
+}
+
 h1 {
-  color: #ff0;
-  font-family: 'FFX', Courier New, sans-serif;
+  color: #ff4;
+  font-family: 'GARN', Courier New, sans-serif;
   text-align: left;
-  text-shadow: 0 0 10px #ff0;
+  text-shadow: 0 0 7px #ff0;
+  transition: text-shadow 0.25s ease-in-out;
+}
+h1:hover {
+  color: #ff4;
+  font-family: 'GARN', Courier New, sans-serif;
+  text-align: left;
+  text-shadow: 0 0 10px #ff8;
 }
 
 h2 {
-  color: #cc0;
-  font-family: 'FFX', Courier New, sans-serif;
+  color: #cc4;
+  font-family: 'GARN', Courier New, sans-serif;
   text-align: left;
-  text-shadow: 0 0 10px #ff0;
+  text-shadow: 0 0 7px #ff0;
+  transition: text-shadow 0.25s ease-in-out;
+}
+h2:hover {
+  color: #cc4;
+  font-family: 'GARN', Courier New, sans-serif;
+  text-align: left;
+  text-shadow: 0 0 10px #ff8;
 }
 
 p {
@@ -33,28 +53,40 @@ txt {
   font-size: 20px;
 }
 
+garn {
+  font-family: 'GARN', Courier New, sans-serif;
+  color: #fff;
+  font-size: 20px;
+}
+
 a:link {
   font-family: 'FFX', Courier New, sans-serif;
   color: #00f;
   font-size: 20px;
   text-decoration: none;
+  text-shadow: 0 0 7px #00f;
+  transition: text-shadow 0.125s ease-in-out;
 }
 a:visited {
   font-family: 'FFX', Courier New, sans-serif;
-  color: #f0f;
+  color: #80f;
   font-size: 20px;
   text-decoration: none;
+  text-shadow: 0 0 7px #f0f;
+  transition: text-shadow 0.125s ease-in-out;
 }
 a:hover {
   font-family: 'FFX', Courier New, sans-serif;
-  color: #0ff;
+  color: #08f;
   font-size: 20px;
   text-decoration: none;
+  text-shadow: 0 0 7px #0ff;
 }
 a:active {
   font-family: 'FFX', Courier New, sans-serif;
-  color: #ff0;
+  color: #88f;
   font-size: 20px;
+  text-shadow: 0 0 7px #ff0;
   text-decoration: none;
 }
 

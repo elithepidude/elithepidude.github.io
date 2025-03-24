@@ -5,29 +5,22 @@
 <link href="style.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
-  <h1>elithepidude</h1>
-  <h2>the sigma world</h2>
+  <h1>404</h1>
+  <h2>nowhere</h2>
   <hr>
-  <p>uhm these <b>don't</b> do anything at all lol</p>
-  <input id="sigma2" type="text" id="fname" name="fname">
-  <button id="buttonthing" onclick="myFunc();">?</button></br>
+  <p>outta bounds</p>
+  <p id="a">outta bounds</p>
   <hr>
-  <a href="https://elithepidude.github.io/where.html">explore the sigma world</a>
+  <a href="https://elithepidude.github.io/">go back</a>
 
 <script>
 var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
 
 function randomInt(int) {
-  return Math.floor(Math.random() * int);
+  return Math.round(Math.random() * int);
 }
-  
-function myFunc() {
-  var tx1 = randomInt(256);
-  var btn = document.getElementById("buttonthing");
-  var inp = document.getElementById("sigma2");
-  btn.innerHTML = ltr[tx1];
-  inp.value += ltr[tx1];
-}
+
+document.getElementById("a").textContent = "btw you rolled a "+randomInt(21);
 </script>
 
 </body>

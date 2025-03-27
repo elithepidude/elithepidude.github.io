@@ -5,20 +5,20 @@ body {
 
 @font-face {
   font-family: 'FFX';
-  src: url('FairfaxHD.ttf') format('truetype'); /* Specify the .ttf file */
+  src: url('LingoAdvanced.otf') format('opentype'); /* Specify the .ttf file */
 }
 @font-face {
   font-family: 'FFXPON';
-  src: url('FairfaxPonaHD.ttf') format('truetype'); /* Specify the .ttf file */
+  src: url('LingoAdvanced.otf') format('opentype'); /* Specify the .ttf file */
 }
 @font-face {
   font-family: 'FFXPUL';
-  src: url('FairfaxPulaHD.ttf') format('truetype'); /* Specify the .ttf file */
+  src: url('LingoAdvanced.otf') format('opentype'); /* Specify the .ttf file */
 }
 
 @font-face {
   font-family: 'GARN';
-  src: url('400xoj.ttf') format('truetype'); /* Specify the .ttf file */
+  src: url('LingoAdvanced.otf') format('opentype'); /* Specify the .ttf file */
 }
 
 h1 {

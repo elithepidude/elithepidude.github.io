@@ -1,5 +1,5 @@
 body {
-  background-color: #204;
+  background-color: #420;
   padding: 64px;
 }
 
@@ -22,41 +22,41 @@ body {
 }
 
 h1 {
-  color: #ff4;
-  font-family: 'GARN', Courier New, sans-serif;
+  color: #f4f;
+  font-family: Comic Sans MS;
   text-align: left;
-  text-shadow: 0 0 7px #ff0;
+  text-shadow: 0 0 7px #0ff;
   transition: text-shadow 0.25s ease-in-out;
 }
 h1:hover {
-  color: #ff4;
-  font-family: 'GARN', Courier New, sans-serif;
+  color: #f4f;
+  font-family: Comic Sans MS;
   text-align: left;
-  text-shadow: 0 0 10px #ff8;
+  text-shadow: 0 0 10px #8ff;
 }
 
 h2 {
-  color: #cc4;
-  font-family: 'GARN', Courier New, sans-serif;
+  color: #c4c;
+  font-family: Comic Sans MS;
   text-align: left;
-  text-shadow: 0 0 7px #ff0;
+  text-shadow: 0 0 7px #0ff;
   transition: text-shadow 0.25s ease-in-out;
 }
 h2:hover {
-  color: #cc4;
-  font-family: 'GARN', Courier New, sans-serif;
+  color: #c4c;
+  font-family: Comic Sans MS;
   text-align: left;
-  text-shadow: 0 0 10px #ff8;
+  text-shadow: 0 0 10px #8ff;
 }
 
 .red {
-  color: #f00;
-}
-.grn {
   color: #0f0;
 }
-.blu {
+.grn {
   color: #00f;
+}
+.blu {
+  color: #f00;
 }
 .pon {
   font-family: 'FFXPON', Courier New, sans-serif;
@@ -66,89 +66,89 @@ h2:hover {
 }
 
 p {
-  font-family: 'FFX', Courier New, sans-serif;
-  color: #fff;
+  font-family: Comic Sans MS;
+  color: #000;
   font-size: 20px;
 }
 
 txt {
-  font-family: 'FFX', Courier New, sans-serif;
-  color: #fff;
+  font-family: Comic Sans MS;
+  color: #000;
   font-size: 20px;
 }
 
 garn {
-  font-family: 'GARN', Courier New, sans-serif;
-  color: #fff;
+  font-family: Comic Sans MS;
+  color: #000;
   font-size: 20px;
 }
 
 a:link {
-  font-family: 'FFX', Courier New, sans-serif;
-  color: #00f;
+  font-family: Comic Sans MS;
+  color: #f00;
   font-size: 20px;
   text-decoration: none;
   text-shadow: 0 0 7px #00f;
   transition: text-shadow 0.125s ease-in-out;
 }
 a:visited {
-  font-family: 'FFX', Courier New, sans-serif;
-  color: #80f;
+  font-family: Comic Sans MS;
+  color: #0f8;
   font-size: 20px;
   text-decoration: none;
   text-shadow: 0 0 7px #f0f;
   transition: text-shadow 0.125s ease-in-out;
 }
 a:hover {
-  font-family: 'FFX', Courier New, sans-serif;
-  color: #08f;
+  font-family: Comic Sans MS;
+  color: #f08;
   font-size: 20px;
   text-decoration: none;
   text-shadow: 0 0 7px #0ff;
 }
 a:active {
-  font-family: 'FFX', Courier New, sans-serif;
-  color: #88f;
+  font-family: Comic Sans MS;
+  color: #8f8;
   font-size: 20px;
   text-shadow: 0 0 7px #ff0;
   text-decoration: none;
 }
 
 button {
-  background-color: #80f;
-  font-family: 'FFX', Courier New, sans-serif;
+  background-color: #f80;
+  font-family: Comic Sans MS;
   transition: background-color 0.125s cubic-bezier(0.65, 0, 0.35, 1)
 }
 button:hover {
-  background-color: #84f;
+  background-color: #f84;
 }
 button:active {
-  background-color: #ff0;
+  background-color: #0ff;
 }
 
 input[type="text"] {
   background-color: #84f;
-  font-family: 'FFX', Courier New, sans-serif;
+  font-family: Comic Sans MS;
   transition: background-color 0.125s cubic-bezier(0.65, 0, 0.35, 1)
 }
 input[type="text"]:hover {
-  background-color: #88f;
+  background-color: #f88;
 }
 
 input.big[type="text"] {
-  background-color: #84f;
-  font-family: 'FFX', Courier New, sans-serif;
+  background-color: #f84;
+  font-family: Comic Sans MS;
   transition: background-color 0.125s cubic-bezier(0.65, 0, 0.35, 1)
 }
 input.big[type="text"]:hover {
-  background-color: #88f;
+  background-color: #f88;
 }
 
 input[type="range"] {
   -webkit-appearance: none;
   width: 100px
   height: 16px;
-  background: #204;
+  background: #420;
   border-radius: 5px;
   outline: 1px solid #80f;
   transition: background 0.25s cubic-bezier(0.65, 0, 0.35, 1), width 0.25s cubic-bezier(0.65, 0, 0.35, 1)
@@ -157,7 +157,7 @@ input[type="range"]:hover {
   -webkit-appearance: none;
   width: 400px
   height: 16px;
-  background: #408;
+  background: #840;
   border-radius: 5px;
   border-radius: 5px;
   outline: 1px solid #80f;
@@ -167,7 +167,7 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 12px;
   height: 12px;
-  background: #80f;
+  background: #f80;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -178,13 +178,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
   appearance: none;
   width: 16px;
   height: 16px;
-  background: #ff0;
+  background: #f0f;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 canvas {
-  background-color: #408;
-  border:1px solid #80f;
+  background-color: #084;
+  border:1px solid #0f8;
 }

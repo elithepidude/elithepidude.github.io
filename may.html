@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>elithepidude</title>
+<title>the may transmissions</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
@@ -106,10 +106,18 @@
   <source src="May_Day22and23.mp4" type="video/mp4">
   Your browser does not support the video tag.
   </video>
+  <h2>day 24 and 25 and 26: WHY and Symbologue and Incrementals</h2>
+  <video width="480" height="360" controls>
+  <source src="May_Day24and25and26.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video></br>
+  <button id="buttonthing" onclick="myFunc();">[+1]</button>
+  <h2 id="sigma2">0</h2>
   <hr>
   <a href="https://elithepidude.github.io/">go back</a>
 
 <script>
+var num = 0
 var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
 
 function randomInt(int) {
@@ -117,11 +125,9 @@ function randomInt(int) {
 }
   
 function myFunc() {
-  var tx1 = randomInt(256);
-  var btn = document.getElementById("buttonthing");
   var inp = document.getElementById("sigma2");
-  btn.innerHTML = "["+ltr[tx1]+"]";
-  inp.value += ltr[tx1];
+  num += 1;
+  inp.innerText = num.toString();
 }
 </script>
 

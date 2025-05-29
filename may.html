@@ -111,11 +111,22 @@
   <source src="May_Day24&25&26.mp4" type="video/mp4">
   Your browser does not support the video tag.
   </video></br>
+  <hr>
   <button id="buttonthing" onclick="myFunc();">[+1]</button>
-  <h2 id="sigma2">0</h2>
+  <button id="buttonthing2" onclick="myFuncB();">[+1x] (25)</button>
+  <button id="buttonthing2" onclick="myFuncC();">[+1y] (100)</button>
+  <p id="sigma2">0</p>
+  <p id="sigma2b">mul: 1</p>
+  <p id="sigma2c">big: 1</p>
+  <hr>
   <h2>day 27: And</h2>
   <video width="480" height="360" controls>
   <source src="May_Day27.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+  <h2>day 28: How To</h2>
+  <video width="480" height="360" controls>
+  <source src="May_Day22.mp4" type="video/mp4">
   Your browser does not support the video tag.
   </video>
   <hr>
@@ -123,16 +134,35 @@
 
 <script>
 var num = 0
+var rev = 1
+var thn = 1
 var ltr = " ☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼ !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~⌂ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
 
 function randomInt(int) {
   return Math.floor(Math.random() * int);
 }
+function D() {
+  var inp = document.getElementById("sigma2");
+  var inpb = document.getElementById("sigma2b");
+  var inpc = document.getElementById("sigma2c");
+  inp.innerText = num.toString();
+  inpb.innerText = "mul: " + rev.toString();
+  inpc.innerText = "big: " + thn.toString();
+}
   
 function myFunc() {
-  var inp = document.getElementById("sigma2");
-  num += 1;
-  inp.innerText = num.toString();
+  num += rev;
+  D();
+}
+function myFuncB() {
+  rev += Math.floor(num/25)*thn;
+  num -= (Math.floor(num/25)*25);
+  D();
+}
+function myFuncC() {
+  thn += Math.floor(rev/100);
+  rev -= (Math.floor(rev/100)*100);
+  D();
 }
 </script>
 

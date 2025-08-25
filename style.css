@@ -1,6 +1,7 @@
 body {
   background-color: #204;
   padding: 64px;
+  -webkit-font-smoothing: antialiased;
 }
 
 @font-face {

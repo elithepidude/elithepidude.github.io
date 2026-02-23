@@ -84,7 +84,7 @@
 				"color1": "#d8351f",
 				menuIconURI,
 				"blocks": [{
-					"opcode": "mathnerd_eval",
+					"opcode": "evalu",
 					"text": "eval [exp]",
 					"blockType": "reporter",
 					"arguments": {
@@ -94,7 +94,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_solve",
+					"opcode": "solve",
 					"text": "solve [exp] for [var]",
 					"blockType": "reporter",
 					"arguments": {
@@ -107,7 +107,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_comma",
+					"opcode": "comma",
 					"text": "get [val] of [str]",
 					"blockType": "reporter",
 					"arguments": {
@@ -121,7 +121,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_scope",
+					"opcode": "scope",
 					"text": "set [var] to [val]",
 					"blockType": "command",
 					"arguments": {
@@ -135,7 +135,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_function",
+					"opcode": "funct",
 					"text": "make function [fun] ( [var] ) = [exp]",
 					"blockType": "command",
 					"arguments": {
@@ -153,7 +153,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_delete",
+					"opcode": "del",
 					"text": "delete [var]",
 					"blockType": "command",
 					"arguments": {
@@ -163,7 +163,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_deletefun",
+					"opcode": "deletefun",
 					"text": "delete function [fun]",
 					"blockType": "command",
 					"arguments": {
@@ -173,7 +173,7 @@
 						}
 					}
 				}, {
-					"opcode": "mathnerd_cleanse",
+					"opcode": "cleanse",
 					"text": "clear scope",
 					"blockType": "command",
 					"arguments": {
@@ -185,34 +185,34 @@
 				}]
 			}
 		}
-		async mathnerd_eval(args) {
+		evalu(args) {
 			return nerdamer(args["exp"]).evaluate();
 		}
-		async mathnerd_solve(args) {
+		solve(args) {
 			return nerdamer.solveEquations(args["exp"],args["var"]);
 		}
-		async mathnerd_comma(args) {
+		comma(args) {
 			const str = args["str"];
 			const index = Number(args["val"]) - 1;
 			const result = str.split(',')[index];
 			//console.log(result); // This will now run
 			return result;
 		}
-		async mathnerd_function(args) {
+		funct(args) {
 			const vars = args["var"];
 			const varsplit = vars.split(',');
 			nerdamer.setFunction(args["fun"], varsplit, args["exp"]);
 		}
-		async mathnerd_deletefun(args) {
+		deletefun(args) {
 			nerdamer.setFunction(args["fun"], "delete");
 		}
-		async mathnerd_scope(args) {
+		scope(args) {
 			nerdamer.setVar(args["var"], args["val"]);
 		}
-		async mathnerd_delete(args) {
+		del(args) {
 			nerdamer.setVar(args["var"], "delete");
 		}
-		async mathnerd_cleanse(args) {
+		cleanse(args) {
 			nerdamer.clearVars();
 		}
 	}
